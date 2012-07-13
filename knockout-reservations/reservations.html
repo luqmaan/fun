@@ -1,0 +1,64 @@
+<html>
+<head>
+    <script src="knockout.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,400' rel='stylesheet' type='text/css'>    
+    <link rel="stylesheet" href="stylesheets/base.css">
+    <link rel="stylesheet" href="stylesheets/skeleton.css">
+    <link rel="stylesheet" href="stylesheets/layout.css">
+
+    <link rel="stylesheet" href="stylesheets/custom.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="twelve columns">
+
+             <div class="row">
+                <h2>Reservations (<span data-bind="text: seats().length"></span>)</h2>
+            </div>
+            <ul id="reservations" data-bind="foreach: seats">
+                <li class="row">
+                    <span class="item three columns alpha">
+                        <label for="name">Name</label>
+                        <input id="name" data-bind="value: name">
+                    </span>
+                    <span class="item three columns">
+                        <label for="meal">Meal</label>
+                        <select id="meal" data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+                    </span>
+                    <span class="item one columns">
+                        <span data-bind="text: formattedPrice"></span>
+                    </span>
+                    <span class="item three columns omega">
+                        <a class="remove" href="#" data-bind="click: $root.removeSeat">Remove</a>
+                    </span>
+                </li>
+            </ul>
+             <div class="row">
+                <h3 data-bind="visible: totalSurcharge() > 0">
+                    Total surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+                </h3>
+            </div>
+
+        </div>
+        <div class="four columns">
+            <div id="sidebar">
+                <h2>Add Reservation</h2>
+                <input data-bind="value: newName" />
+                <select data-bind="foreach: availableMeals, value: newMeal">
+                    <option data-bind="value: $index, text: mealName"></option>
+                </select>
+
+                <button data-bind="click: addSeat">Reserve another seat</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="reservations.js"></script>
+</body>
+</html>

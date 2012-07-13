@@ -1,0 +1,32 @@
+.container {
+    margin-top: 10px;
+}
+#sidebar {
+	border-left: 1px dotted rgb(221, 221, 221);
+	padding: 10px;
+}
+#reservations li.row {
+
+	margin-bottom: 0px;
+	border-bottom: dotted 1px #ddd;
+	padding: 10px;
+	margin-top: 10px;
+
+}
+#reservations a.remove {
+	color: rgb(252, 0, 0);
+}
+#reservations a.remove:hover {
+	color: rgb(190, 28, 28);
+}
+@media only screen and (max-width: 767px) {
+
+	#sidebar {
+
+		border: none;
+		border-top: 1px dotted rgb(221, 221, 221);
+		background: rgb(255, 255, 237);
+
+	}
+
+}
