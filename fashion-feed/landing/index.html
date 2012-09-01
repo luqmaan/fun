@@ -15,262 +15,145 @@
 	
 	<!-- Your styles -->
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-	
+
+	<!-- Fonts -->
+	<link rel="stylesheet" href="css/webfonts/fonts.css" type="text/css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
+
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
-	
-	<!--Delete embedded styles, just for example.-->
-	<style type="text/css">
-	
-	body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	}
-	
-	.container p {
-	color: #fff;
-	line-height: 100px;
-	background: #000;
-	text-align: center;
-	margin: 20px 0 0 0;
-	}
-	
-	</style>
+
+	<!-- Live Reload -->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
 </head>
 
 
 <body>
 
-<div class="container">
-	<div id="header" class="row" >
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol">
-			<p>One</p>
-		</div>
-		<div class="onecol last">
-			<p>One</p>
+<div class="container header">
+	<div class="row">
+		<div class="logo">
+			<h1>Fashion Feed - New York City</h1>
 		</div>
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="twocol last">
-			<p>Two columns</p>
-		</div>
+<div class="container hero">
+	<div class="row hide-dash center">
+		<h3><span class="dash grey"></span> Fashion Week is now social <span class="dash grey"></span></h3>
+	</div>
+	<div class="row center">
+		<h2>Stay On Top</h2>
+	</div>
+	<div class="row center">
+		<h4>Get an exclusive preview of NYC Fashion Week's premiere social experience.</h4>
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="threecol last">
-			<p>Three columns</p>
-		</div>
+<div class="container details">
+	<div class="row center">
+		<a href="#" id="request-invite" class="button bold">Request Invite</a>
+	</div>
+	<div class="row center remaining">
+		<span class="dash darkgrey"></span>
+		<span class="number">500</span>
+		<span class="dash darkgrey"></span>
+		<span class="text">remain</span>
+	</div>
+	<div class="row center">
+		Already have an invite? <br />
+		<a href="#" id="sign-in-twitter" class="button regular">Sign In With Twitter</a>
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
+<div class="container actionsbar">
+	<div class="row center">
 		<div class="fourcol">
-			<p>Four columns</p>
+			<h3>Discover</h3>
+			<h4>what's<br />popular</h4>
 		</div>
 		<div class="fourcol">
-			<p>Four columns</p>
+			<h3>Follow</h3>
+			<h4>each show <br />& designer</h4>
 		</div>
 		<div class="fourcol last">
-			<p>Four columns</p>
+			<h3>Recap</h3>
+			<h4>on fashion's <br />latest trends</h4>
 		</div>
 	</div>
 </div>
 
-<div class="container">
+<div class="container feed-item">
 	<div class="row">
-		<div class="onecol">
-			<p>One</p>
+		<div class="photo threecol">
+			<img src="images/feed-photo-hover.jpg">
+			<div class="extra">
+				<div class="social threecol">
+					<span class="fb icon"></span>
+					<span class="tw icon"></span>
+					<span class="pin icon"></span>
+				</div>
+				<div class="meta">
+					<span class="username">@seanmetcalfing</span>
+					<span class="likes icon"></span>
+					<span class="likes count">12134</span>
+					<span class="comments icon"></span>
+					<span class="comments count">23</span>
+				</div>
+				</div>
 		</div>
-		<div class="elevencol last">
-			<p>Eleven columns</p>
+		<div class="sixcol details">
+			<h4><span class="name">Sean Metcalf</span> <span class="username">@seanmetcalfing</span></h4>
+			<p>RT: Lorem ipsum dolor sit amet, <a href="#">consectetuer</a> dipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+			<div class="count">RT 2535</div>
+			<div class="actions">
+				<a href="#">Expand</a>
+				<a href="#">Reply</a>
+				<a href="#">Retweet</a>
+				<a href="#">Favorite</a>
+			</div>
+		</div>
+		<div class="threecol last source">
+			<h3><i>#</i>loremipsum</h3>
+			<h3><i>#</i>loremdolor</h3>
 		</div>
 	</div>
 </div>
-
-<div class="container">
-	<div class="row">
-		<div class="twocol">
-			<p>Two columns</p>
-		</div>
-		<div class="tencol last">
-			<p>Ten columns</p>
-		</div>
+<div class="container view-more">
+	<div class="row center">
+		<a id="view-more" class="button white bold ">View More <img src="images/arrow-down.png" /></a>
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="ninecol last">
-			<p>Nine columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
+<div class="container footer">
 	<div class="row">
 		<div class="fourcol">
-			<p>Four columns</p>
+			<div class="inner">
+				<span>PRESS: </span>
+				<a href="mailto:hello@fashionfeed.is">hello@fashionfeed.is</a>
+			</div>
 		</div>
-		<div class="eightcol last">
-			<p>Eight columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="fivecol">
-			<p>Five columns</p>
-		</div>
-		<div class="sevencol last">
-			<p>Seven columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="sixcol">
-			<p>Six columns</p>
-		</div>
-		<div class="sixcol last">
-			<p>Six columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="sevencol">
-			<p>Seven columns</p>
-		</div>
-		<div class="fivecol last">
-			<p>Five columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="eightcol">
-			<p>Eight columns</p>
+		<div class="fourcol">
+			<div class="inner middle">
+				<a href="#"><img src="images/twitter-footer.png" /> Follow Us</a>
+			</div>
 		</div>
 		<div class="fourcol last">
-			<p>Four columns</p>
+			<div class="inner copyright">
+				&copy; 2012 NYC Fashion Feed
+			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
-		<div class="ninecol">
-			<p>Nine columns</p>
-		</div>
-		<div class="threecol last">
-			<p>Three columns</p>
-		</div>
+<div class="container credit">
+	<div class="row center">
+		<span>
+			Made by ACG: <a href="#">A Creative Group</a>
+		</span>
 	</div>
 </div>
-
-<div class="container">
-	<div class="row">
-		<div class="tencol">
-			<p>Ten columns</p>
-		</div>
-		<div class="twocol last">
-			<p>Two columns</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="elevencol">
-			<p>Eleven columns</p>
-		</div>
-		<div class="onecol last">
-			<p>One</p>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="threecol">
-			<p>Three columns</p>
-		</div>
-		<div class="sixcol">
-			<p>Six columns</p>
-		</div>
-		<div class="threecol last">
-			<p>Three columns</p>
-		</div>
-	</div>
-</div>
-
 
 </body>
 
