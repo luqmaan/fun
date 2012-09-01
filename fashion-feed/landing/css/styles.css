@@ -25,6 +25,9 @@
 	a:hover {
 		color: #078181;
 	}
+	.hide {
+		display: none;
+	}
 
 	/* Support */
 	.row.center {
@@ -155,13 +158,12 @@
 		padding: 30px 0px;
 		border-bottom: #969696 3px solid;
 		background: #000;
-		box-shadow: 0px 3px 1px #000;
+		box-shadow: 0px 2px 3px #000;
 	}
 	.header .logo {
 		margin: 0 auto;
 		width: 326px;
 		height: 42px;
-		background: url(../images/logo.png) no-repeat;
 	}
 	.header .logo h1 {
 		margin-left: -1000px;
@@ -316,6 +318,8 @@
 	.footer .inner.middle {
 		border-left: 1px solid #000;
 		border-right: 1px solid #000;
+		padding-bottom: 1000px;
+		margin-bottom: -1000px;
 	}
 	.footer a {
 		color: #fff;
@@ -344,9 +348,6 @@
 
 @media handheld, only screen and (max-width: 767px) {
 
-	body {
-		
-	}
 	.hide-dash .dash {
 		display: none;
 	}
@@ -361,6 +362,9 @@
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
+	.footer {
+		padding: 15px 0;
+	}
 	.footer .inner {
 		padding: 0px;
 	}
@@ -372,15 +376,20 @@
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-	body {
-	}
+
 	.header {
 		border-bottom-width: 2px;
+		position: fixed;
+		padding: 10px 0;
+		z-index: 1000;
+	}
+	.fixed-header-push.hide {
+		height: 55px;
+		display: block;
 	}
 	.header .logo {
-		background-size:80%;
-		background-position: center;
 		padding: auto 0px;
+		max-width: 90%;
 	}
 	.hero {
 		padding-top: 30px;
@@ -389,9 +398,12 @@
 		font-size: 55px;
 		line-height: 55px;
 		padding-bottom: 10px;
+		padding-top: 0px;
 	}
 	.hero h3 {
-		padding-bottom: 10px;
+		letter-spacing: 2px;
+		font-size: 15px;
+		line-height: 15px;
 	}
 	.hero h4 {
 		font-size: 16px;
@@ -413,9 +425,9 @@
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { 
 
-/* .logo {
-		background: url(logo2x.jpg) no-repeat; */ 
-
-/* background-size: 212px 303px; */
+	/* TODO
+		- create @2x social images
+		- create @2x down arrows
+	*/
 
 }
