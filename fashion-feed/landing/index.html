@@ -17,15 +17,10 @@
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
 
 	<!-- Fonts -->
-	<link rel="stylesheet" href="css/webfonts/fonts.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/webfonts/fonts.css" type="text/css" media="screen" /
 	<link href='http://fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
 
-	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
-	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
-
-	<!-- Live Reload -->
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-	<script src="http://debug.phonegap.com/target/target-script-min.js#2398230876578"></script>
+	<script type="text/javascript" src="js/lib/css3-mediaqueries.js"></script>
 
 </head>
 
@@ -35,7 +30,7 @@
 <div class="container header">
 	<div class="row">
 		<div class="logo">
-			<img src="images/logo.png">
+			<a href="index.html"><img src="images/logo.png" border="0"></a>
 			<h1>Fashion Feed - New York City</h1>
 		</div>
 	</div>
@@ -46,33 +41,118 @@
 	</div>
 </div>
 
-<div class="container hero">
-	<div class="row hide-dash center">
-		<h3><span class="dash grey"></span> Fashion Week is now social <span class="dash grey"></span></h3>
+<!-- Initial: Mailchimp Signup -->
+<div id="mc-signup">
+	<div class="container hero">
+		<div class="row hide-dash center">
+			<h3><span class="dash grey"></span> Fashion Week is now social <span class="dash grey"></span></h3>
+		</div>
+		<div class="row center ">
+			<h2>Stay On Top</h2>
+		</div>
+		<div class="row center">
+			<span class="subtitle serif">Get an exclusive preview of NYC Fashion Week's premiere social experience.</span>
+		</div>
 	</div>
-	<div class="row center">
-		<h2>Stay On Top</h2>
-	</div>
-	<div class="row center">
-		<h4>Get an exclusive preview of NYC Fashion Week's premiere social experience.</h4>
+	<div class="container details">
+		<div class="row center">
+			<a href="#" id="request-invite" class="button bold">Request Invite</a>
+		</div>
+		<div class="row center">
+			<div id="email-entry" style="display:none;">
+				<input class="email" type="text" name="code" value="Enter Email Address" />
+				<a class="submit button">Done</a>
+			</div>
+		</div>
+		<div class="row center dash-box">
+			<span class="dash darkgrey"></span>
+			<span class="number">500</span>
+			<span class="dash darkgrey"></span>
+			<span class="text">remain</span>
+		</div>
+		<div class="row center">
+			Already have an invite? <br />
+			<a href="#" id="sign-in-twitter" class="button regular">Sign In With Twitter</a>
+		</div>
 	</div>
 </div>
 
-<div class="container details">
-	<div class="row center">
-		<a href="#" id="request-invite" class="button bold">Request Invite</a>
+<!-- Mailchimp Results -->
+<div id="mc-results" class="hide">
+	<div class="container hero">
+		<div class="row hide-dash center">
+			<h3><span class="dash grey"></span> You're almost there <span class="dash grey"></span></h3>
+		</div>
+		<div class="row center">
+			<h2>Thank You</h2>
+		</div>
+		<div class="row center">
+			<span class="serif">Check your e-mail to claim your spot in line.</span>
+		</div>
 	</div>
-	<div class="row center remaining">
-		<span class="dash darkgrey"></span>
-		<span class="number">500</span>
-		<span class="dash darkgrey"></span>
-		<span class="text">remain</span>
-	</div>
-	<div class="row center">
-		Already have an invite? <br />
-		<a href="#" id="sign-in-twitter" class="button regular">Sign In With Twitter</a>
+	<div class="container details">
+		<div class="row center dash-box">
+			<span class="dash white"></span>
+			<span class="number">or</span>
+			<span class="dash white"></span>
+		</div>
+		<div class="row center">
+			<a href="#" id="request-invite" class="button">Spread The Word</a>
+		</div>
+		<div class="row center">
+			<span class="serif">&amp; speed things up</span>
+		</div>
 	</div>
 </div>
+
+<!-- Invitation Entry -->
+<div id="invite-entry" class="hide">
+	<div class="container hero">
+		<div class="row center">
+			<h2>Welcome</h2>
+		</div>
+		<div class="row center">
+			<h4>Ready for your exclusive sneak peek?</h4>
+		</div>
+	</div>
+	<div class="container details">
+		<div class="row center">
+			<input class="invite" type="text" name="code" value="Enter Invitation Code" />
+		</div>
+		<div class="row center">
+			<a href="#" id="request-invite" class="button bold">Sign In With Twitter</a>
+		</div>
+		<div class="row center">
+			<a href="#" id="sign-in-twitter" class="request-invite-text">Request An Invite</a>
+		</div>
+	</div>
+</div>
+
+<!-- Invitation Error -->
+<div id="invite-error" class="hide">
+	<div class="container hero">
+		<div class="row center">
+			<h2>Denied</h2>
+		</div>
+		<div class="row center">
+		<h4>We didn't recognize that invite</h4><br />
+			<h4 class="cyan">Try again?</h4>
+		</div>
+	</div>
+	<div class="container details">
+		<div class="row center">
+			<input class="invite" type="text" name="code" value="Enter Invitation Code" />
+		</div>	
+		<div class="row center">
+			<a href="#" id="request-invite" class="button bold">Sign In With Twitter</a>
+		</div>
+		<div class="row center">
+			<a href="#" id="sign-in-twitter" class="request-invite-text">Request An Invite</a>
+		</div>
+	</div>
+</div>
+
+
 
 <div class="container actionsbar">
 	<div class="row center">
@@ -161,6 +241,13 @@
 		</span>
 	</div>
 </div>
+
+<script type="text/javascript" src="js/lib/jquery.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+<!-- Live Reload -->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="http://debug.phonegap.com/target/target-script-min.js#2398230876578"></script>
 
 </body>
 
