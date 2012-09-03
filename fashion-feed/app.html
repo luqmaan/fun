@@ -24,13 +24,17 @@
 </head>
 
 
-<body class="landing">
+<body class="homepage">
 
 <div class="container header">
 	<div class="row">
 		<div class="logo">
 			<a href="index.html"><img src="images/logo.png" border="0"></a>
 			<h1>Fashion Feed - New York City</h1>
+		</div>
+		<div class="search">
+			<input type="text" name="search" value="Search" />
+			<a href="#">View Schedule</a>
 		</div>
 	</div>
 </div>
@@ -40,9 +44,20 @@
 	</div>
 </div>
 
-
-<div class="container feed-item">
+<div class="container hero">
 	<div class="row">
+		<h2 class="name">This Designer</h2>
+		<div class="status">is on top</div>
+		<a href="#" class="link">View Leaders</a>
+	</div>
+</div>
+
+<div class="container feed">
+	<div class="row feed-title">
+		<h3 class="nyc">NYC Fashion Week</h3>
+		<h3 class="is"><span class="dash w150"></span><span class="title">Is Live</span><span class="dash w150"></span></h3>
+	</div>
+	<div class="row feed-item">
 		<div class="photo threecol">
 			<img src="images/feed-photo-hover.jpg">
 			<div class="extra">
@@ -72,14 +87,78 @@
 			</div>
 		</div>
 		<div class="threecol last source">
-			<h3><i>#</i>loremipsum</h3>
-			<h3><i>#</i>loremdolor</h3>
+			<h4><i>#</i>loremipsum</h4>
+			<h4><i>#</i>loremdolor</h4>
+			<div class="tweets-count">Tweeted 75234</div>
 		</div>
 	</div>
-</div>
-<div class="container view-more">
-	<div class="row center">
+	<div class="row center view-more">
 		<a id="view-more" class="button white bold ">View More <img src="images/arrow-down.png" /></a>
+	</div>
+</div>
+
+<div class="container feed">
+	<div class="row feed-item">
+		<div class="photo threecol">
+			<img src="images/feed-photo-hover.jpg">
+			<div class="extra">
+				<div class="social threecol">
+					<span class="fb icon"></span>
+					<span class="tw icon"></span>
+					<span class="pin icon"></span>
+				</div>
+				<div class="meta">
+					<span class="username">@seanmetcalfing</span>
+					<span class="likes icon"></span>
+					<span class="likes count">12134</span>
+					<span class="comments icon"></span>
+					<span class="comments count">23</span>
+				</div>
+				</div>
+		</div>
+		<div class="sixcol details">
+			<h4><span class="name">Sean Metcalf</span> <span class="username">@seanmetcalfing</span></h4>
+			<p>RT: Lorem ipsum dolor sit amet, <a href="#">consectetuer</a> dipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+			<div class="count">RT 2535</div>
+			<div class="actions">
+				<a href="#">Expand</a>
+				<a href="#">Reply</a>
+				<a href="#">Retweet</a>
+				<a href="#">Favorite</a>
+			</div>
+		</div>
+		<div class="threecol last source">
+			<h4><i>#</i>loremipsum</h4>
+			<h4><i>#</i>loremdolor</h4>
+			<div class="tweets-count">Tweeted 75234</div>
+		</div>
+	</div>
+	<div class="row center view-more">
+		<a id="view-more" class="button white bold ">View More <img src="images/arrow-down.png" /></a>
+	</div>
+</div>
+
+<div class="container postbar first leaders">
+	<div class="row">
+		<h3 class="cyan">The Leaders</h3>
+	</div>
+	<div class="row names center">
+		<span class="name">1. Designer Name One</span>
+		<span class="name">2. Designer Name Two</span>
+		<span class="name last">3. Designer Name Three</span>
+	</div>
+	<a href="#" class="more arrow"><img src="images/arrow-right.png"></a>
+</div>
+
+<div class="container postbar days">
+	<div class="row center">
+		<a href="#" class="day">Day 1</a>
+		<a href="#" class="day">Day 2</a>
+		<a href="#" class="day">Day 3</a>
+		<a href="#" class="day">Day 4</a>
+		<a href="#" class="day current">Day 5</a>
+		<a href="#" class="day">Day 6</a>
+		<a href="#" class="day last">Day 7</a>
 	</div>
 </div>
 
@@ -114,7 +193,6 @@
 
 <script type="text/javascript" src="js/lib/jquery.js"></script>
 <script type="text/javascript" src="js/lib/happy.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript">
 	router.init();
 </script>

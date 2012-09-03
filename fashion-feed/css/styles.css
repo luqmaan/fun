@@ -38,6 +38,7 @@
 		padding: 10px 20px;
 		width: 220px;
 		border: 1px solid #272A2A;
+		border-radius: 1px;
 		border-bottom: #1C1B1B 2px solid;
 		background: #000;
 		color: #fff;
@@ -69,6 +70,12 @@
 	}
 	h1, h2, h3, h4, h5, h6, p, a {
 		font-weight: normal;
+	}
+	h3 {
+		font-size: 40px;
+		line-height: 40px;
+		letter-spacing: 3px;
+		text-align: center;
 	}
 	.serif {
 		font: 18px 'Kotta One', 'Adobe Garamond Pro', Garamond, Georgia, serif;
@@ -183,6 +190,37 @@
 		background: url('../images/likes.png') no-repeat;
 	}
 
+	/* inline dashes */
+	.dash {
+		display: inline-block;
+		width: 30px;
+		height: 1px;
+		vertical-align: middle;
+		line-height: 0px;
+		background: #969696;
+	}
+	.dash.grey {
+		background: #969696;
+	}
+	.dash.darkgrey {
+		background: #494949;
+	}
+	.dash.white {
+		background: #DBDBDB;
+	}
+	.dash.w50 {
+		width: 50px;
+	}
+	.dash.w100 {
+		width: 100px;
+	}
+	.dash.w150 {
+		width: 150px;
+	}
+	.dash.w200 {
+		width: 200px;
+	}
+
 	/* Header */
 	.header {
 		padding: 30px 0px;
@@ -203,7 +241,7 @@
 
 	/* Footer */
 	.footer {
-		margin: 20px 0px;
+		margin: 0px 0px 20px;
 		background: #1C1B1B;
 		text-align: center;
 	}
@@ -268,24 +306,7 @@
 	.landing .hero h4 {
 		font: 19px/19px NovecentowideNormalRegular, 'Helvetica Neue', Arial, sans-serif;
 	}
-	/* inline dashes */
-	.landing .dash {
-		display: inline-block;
-		width: 30px;
-		height: 1px;
-		vertical-align: middle;
-		line-height: 0px;
-	}
-	.landing .dash.grey {
-		background: #969696;
-	}
-	.landing .dash.darkgrey {
-		background: #494949;
-	}
-	.landing .dash.white {
-		background: #DBDBDB;
-	}	
-	.dash-box {
+	.landing .dash-box {
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
@@ -377,10 +398,42 @@
 		color: #05D6D6;
 	}
 
+	/* Footer */
+	.landing .footer {
+		margin-top: 20px;
+	}
+
 
 /* ! Main Application Styles      */
 /* ------------------------------ */
+	
+	/* TODO: create narrower version of shading so that it doesn't cutoff beyond 1140 */
+	.container.feed {
+		background: url(../images/headline-shading.jpg) center top no-repeat;
+		padding-top: 30px;
+		padding-bottom: 20px;
+	}
 
+	/* Feed Header */
+	.feed-title {
+		margin-bottom: 20px;
+	}
+	.feed-title h3 {
+
+	}
+	.feed-title .nyc {
+		color: #5A5A5A;
+	}
+	.feed-title .is {
+		color: #fff;
+	}
+	.feed-title .dash {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.feed-title .dash {
+		background: #5A5A5A;
+	}
 	/* Feed Item */
 	.feed-item {
 		margin-bottom: 40px;
@@ -390,19 +443,38 @@
 		font-size: 15px;
 	}
 	.feed-item .details .name {
+		color: #fff;
+		-webkit-transition: color 500ms ease;
+		-moz-transition: color 500ms ease;
+		-o-transition: color 500ms ease;
+		transition: color 500ms ease;
+		-ms-transition: color 500ms ease;
+	}
+	.feed-item:hover .details .name {
 		color: #05D6D6;
 	}
 	.feed-item .details p {
 		margin-bottom: 10px;
 		font: 16px/20px 'maven_pro_light_200regular', Arial, sans-serif;
 	}
+	.feed-item .details a {
+		color: #fff;
+	}
+	.feed-item:hover .details a {
+		color: #05D6D6;
+	}
+	.feed-item .details a:hover {
+		color: #078181;
+	}
 	.feed-item .details .count {
+		color: #fff;
 		font: 11px/15px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
 	}
-	.feed-item .details .actions a {
+	.feed-item .details .actions a, .feed-item .source .tweets-count {
 		color: #969696;
 		text-decoration: none;
 		font: 11px/15px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
+		margin-right: 20px;
 	}
 	.feed-item .details .actions a:hover {
 		color: #05D6D6;
@@ -412,6 +484,15 @@
 		z-index: 10;
 		float: left;
 		width: 82px;
+	}
+	.feed-item .icon {
+		opacity: 0.5;
+	}
+	.feed-item:hover .icon {
+		opacity: 0.7;
+	}
+	.feed-item .icon:hover {
+		opacity: 1;
 	}
 	.feed-item .photo img {
 		float: none;
@@ -440,16 +521,76 @@
 		float: left;
 		font: 11px/15px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
 	}
-	.feed-item .source h3 {
+	.feed-item .source h4 {
 		text-align: left;
 		letter-spacing: 3px;
+		color: #fff;
 		font: 20px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
 	}
-	.feed-item .source h3 i {
+	.feed-item .source h4 i {
 		color: #05D6D6;
 		font-style: normal;
 	}
+	.feed-item .source .tweets-count {
+		margin-top: 20px;
+	}
 
+/* ! Homepage Stlyes              */
+/* ------------------------------ */
+
+	/* postbar */
+	.homepage .postbar {
+		background: #111111;
+		padding: 20px 0px;
+		border-bottom: 1px solid #000;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.homepage .postbar.first {
+		padding-top: 30px;
+		border-top: 1px solid #000;
+		box-shadow: 0px 0px 10px #000;
+	}
+	/* leaders */
+	.homepage .leaders.postbar {
+		color: #fff;
+	}
+	.homepage .leaders .names {
+		margin-top: 15px;
+	}
+	.homepage .leaders .name {
+		margin-right: 70px;
+		white-space: nowrap;
+	}
+	.homepage .leaders .name.last {
+		margin-right: 0px;
+	}
+	.homepage .leaders .arrow.more {
+		position: relative;
+		margin-right: 10%;
+		float: right;
+		margin-top: -60px;
+	}
+	.homepage .leaders .arrow.more:hover {
+		opacity: 0.7;
+	}
+	/* days */
+	.homepage .days .row {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.homepage .days .day {
+		color: #555555;
+		margin-right: 70px;
+		font: 14px/14px NovecentowideNormalRegular 'Helvetica Neue', Arial, sans-serif;
+		white-space: nowrap;
+	}
+	.homepage .days .day.last {
+		margin-right: 0px;
+	}
+	.homepage .days .day.current, .homepage .days .day:hover {
+		color: #ccc;
+	}
 
 /* ============================= */
 /* ! Layout for mobile version   */
@@ -473,6 +614,11 @@
 	/* Buttons */
 
 	/* Icons */
+
+	/* inline dashes */
+	.dash {
+		display: none;
+	}
 
 	/* Header */
 
@@ -500,10 +646,6 @@
 		font-size: 120px;
 	}
 
-	/* inline dashes */
-	.landing .hide-dash .dash {
-		display: none;
-	}
 	/* actions bar */
 
 	/* Mailchimp Sign Up Page */
@@ -525,7 +667,30 @@
 		padding-bottom: 10px;
 	}
 
+/* ! Homepage Stlyes              */
+/* ------------------------------ */
+
+	/* postbar */
+
+	.homepage .leaders .names .name {
+		margin: 0px;
+		display: block;
+	}
+	.homepage .leaders .arrow.more {
+		display: block;
+		position: static;
+		top: auto;
+		left: auto;
+		margin: 15px auto 0px;
+		float: none;
+		text-align: center;
+	}
+	.homepage .days .day {
+		margin: 10px;
+	}
+
 }
+
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -631,9 +796,9 @@
 
 /* ! Main Application Styles      */
 /* ------------------------------ */
+
 	/* Feed Item */
 
-}
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {
