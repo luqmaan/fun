@@ -2,16 +2,14 @@
 /* ! Layout for desktop version   */
 /* ============================== */
 
+
+/* ! Common Styles                */
+/* ------------------------------ */
+
 	/* Generic */
 	body {
 		margin-bottom: 50px;
 		background: #010101;
-		color: #969696;
-		letter-spacing: 1px;
-		font: 14px/28px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
-	}
-	h1, h2, h3, h4, h5, h6, p, a {
-		font-weight: normal;
 	}
 	a {
 		color: #05D6D6;
@@ -28,6 +26,14 @@
 	.hide {
 		display: none;
 	}
+	.row.center {
+		margin: 0 0;
+		margin-left: 4.85%;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* Form */
 	input[type=text] {
 		padding: 10px 20px;
 		width: 220px;
@@ -39,37 +45,39 @@
 		letter-spacing: 2px;
 		font: 16px/16px 'maven_pro_light_300regular', Arial, sans-serif;
 	}
+	form .error-message {
+		color: #F93636;
+		font: 16px/16px 'maven_pro_light_300regular', Arial, sans-serif;
+		letter-spacing: 0px;
+		margin: 10px auto;
+		display: inline-block;
+	}
+	.button.error {
+		color: #F93636;
+	}
+	.button.error:hover {
+		color: #1C1B1B;
+		background: #F93636;
+	}
 
-	/* Support */
-	.row.center {
-		margin: 0 0;
-		margin-left: 4.85%;
-		width: 100%;
-		text-align: center;
+	/* Typography */
+
+	body {
+		color: #969696;
+		letter-spacing: 1px;
+		font: 14px/28px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
+	}
+	h1, h2, h3, h4, h5, h6, p, a {
+		font-weight: normal;
 	}
 	.serif {
 		font: 18px 'Kotta One', 'Adobe Garamond Pro', Garamond, Georgia, serif;
 	}
-	/* Text Colors */
 	.cyan {
 		color: #05D6D6;
 	}
-	.dash {
-		display: inline-block;
-		width: 30px;
-		height: 1px;
-		vertical-align: middle;
-		line-height: 0px;
-	}
-	.dash.grey {
-		background: #969696;
-	}
-	.dash.darkgrey {
-		background: #494949;
-	}
-	.dash.white {
-		background: #DBDBDB;
-	}
+
+	/* Buttons */
 	.button {
 		display: inline-block;
 		margin-bottom: 3px;
@@ -108,6 +116,9 @@
 	.button.full {
 		width: 100%;
 	}
+
+	/* Icons */
+
 	.icon {
 		display: inline-block;
 		vertical-align: middle;
@@ -172,8 +183,7 @@
 		background: url('../images/likes.png') no-repeat;
 	}
 
-
-	/* Specific */
+	/* Header */
 	.header {
 		padding: 30px 0px;
 		border-bottom: #969696 3px solid;
@@ -190,63 +200,122 @@
 		color: transparent;
 		font-size: 0;
 	}
-	.hero {
+
+	/* Footer */
+	.footer {
+		margin: 20px 0px;
+		background: #1C1B1B;
+		text-align: center;
+	}
+	.footer .inner {
+		padding: 40px 0px;
+	}
+	.footer .inner.middle {
+		margin-bottom: -1000px;
+		padding-bottom: 1000px;
+		border-right: 1px solid #000;
+		border-left: 1px solid #000;
+	}
+	.footer a {
+		color: #fff;
+	}
+	.footer a:hover {
+		opacity: 0.5;
+	}
+	.footer .copyright {
+		color: #fff;
+	}
+	.credit {
+		font: 11px/15px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
+	}
+	.credit a {
+		color: #fff;
+		font: 11px/15px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
+	}
+	.credit a:hover {
+		opacity: 0.5;
+	}
+
+
+/* ! Landing Page Styles          */
+/* ------------------------------ */
+
+	/* Landing Page Hero */
+	.landing .hero {
 		padding-top: 70px;
 		padding-bottom: 30px;
 		background: url(../images/headline-shading.jpg) center top no-repeat;
 	}
-	.hero h2, .hero h3, .hero .subtitle {
+	.landing .hero h2, .landing .hero h3, .landing .hero .subtitle {
 		text-align: center;
 		letter-spacing: 0px;
 	}
-	.hero h2 {
+	.landing .hero h2 {
 		color: #fff;
 		font: 140px/140px metropolisregular, 'Helvetica Neue', Arial, sans-serif;
 	}
-	.hero h3 {
+	.landing .hero h3 {
 		padding-bottom: 10px;
 		letter-spacing: 7px;
 		font: 22px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
 	}
-	.hero .subtitle {
+	.landing .hero .subtitle {
 		color: #DBDBDB;
 	}
-	.hero h3 .dash {
+	.landing .hero h3 .dash {
 		width :60px;
 	}
-	.hero h4 {
+	.landing .hero h4 {
 		font: 19px/19px NovecentowideNormalRegular, 'Helvetica Neue', Arial, sans-serif;
 	}
+	/* inline dashes */
+	.landing .dash {
+		display: inline-block;
+		width: 30px;
+		height: 1px;
+		vertical-align: middle;
+		line-height: 0px;
+	}
+	.landing .dash.grey {
+		background: #969696;
+	}
+	.landing .dash.darkgrey {
+		background: #494949;
+	}
+	.landing .dash.white {
+		background: #DBDBDB;
+	}	
 	.dash-box {
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
-	.dash-box .dash {
+	.landing .dash-box .dash {
 		margin: 5px;
 		width: 20px;
 	}
-	.dash-box .number {
+	.landing .dash-box .number {
 		color: #fff;
 		font: 18px/10px 'Kotta One', 'Adobe Garamond Pro', Garamond, Georgia, serif;
 	}
-	.dash-box .text {
+	.landing .dash-box .text {
 		display: block;
 		margin-top: -5px;
 		color: #fff;
 		letter-spacing: 2px;
 		font: 9px/9px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
 	}
-	.actionsbar {
+	/* actions bar */
+	.landing .actionsbar {
 		margin-top: 30px;
 		margin-bottom: 50px;
 		border-top: #1A1919 2px solid;
 		border-bottom: #1A1919 6px solid;
 		background: #0D0D0D;
 	}
-	.actionsbar h3, h4 {
+	.landing .actionsbar h3, h4 {
 		display: inline-block;
 	}
-	.actionsbar h3 {
+	.landing .actionsbar h3 {
 		padding-top: 15px;
 		padding-bottom: 15px;
 		color: #fff;
@@ -254,12 +323,64 @@
 		text-transform: uppercase;
 		font: normal normal normal 42px 'metropolisregular', Arial, sans-serif;
 	}
-	.actionsbar h4 {
+	.landing .actionsbar h4 {
 		color: #05D6D6;
 		vertical-align: middle;
 		text-align: left;
 		font: 14px/15px 'Kotta One', 'Adobe Garamond Pro', Garamond, Georgia, serif;
 	}
+
+	/* Mailchimp Sign Up Page */
+	#mc-signup #email-entry {
+		display: block;
+		margin: 0 auto;
+		width: 354px;
+	}
+	.landing #mc-signup .email {
+		float: left;
+		display: inline-block;	
+		margin: 0px;
+		width: 250px;
+	}
+	.landing #mc-signup .submit {
+		float: left;
+		display: inline-block;
+		margin: 0px auto;
+		padding: 0px;
+		padding-top: 15px;
+		padding-bottom: 14px;
+		width: 60px;
+		height: auto;
+		border: 1px solid #1C1B1B;
+		font: 10px/10px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
+	}
+	/* Mailchimp Thank You Page */
+	.landing #mc-results .hero {
+		padding-bottom: 0px;
+	}
+	.landing #mc-results .dash-box {
+		padding-top: 5px;
+		padding-bottom: 15px;
+	}
+	/* Invitation Entry Page */
+	.landing #invite-entry input, #invite-error input {
+		margin-bottom: 20px;
+		width: 344px;
+	}
+	.landing a.request-invite-text {
+		color: #DBDBDB;
+		text-decoration: underline;
+		letter-spacing: 2px;
+		font: 11px/15px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
+	}
+	.landing a.request-invite-text:hover {
+		color: #05D6D6;
+	}
+
+
+/* ! Main Application Styles      */
+/* ------------------------------ */
+
 	/* Feed Item */
 	.feed-item {
 		margin-bottom: 40px;
@@ -328,98 +449,7 @@
 		color: #05D6D6;
 		font-style: normal;
 	}
-	.footer {
-		margin: 20px 0px;
-		background: #1C1B1B;
-		text-align: center;
-	}
-	.footer .inner {
-		padding: 40px 0px;
-	}
-	.footer .inner.middle {
-		margin-bottom: -1000px;
-		padding-bottom: 1000px;
-		border-right: 1px solid #000;
-		border-left: 1px solid #000;
-	}
-	.footer a {
-		color: #fff;
-	}
-	.footer a:hover {
-		opacity: 0.5;
-	}
-	.footer .copyright {
-		color: #fff;
-	}
-	.credit {
-		font: 11px/15px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
-	}
-	.credit a {
-		color: #fff;
-		font: 11px/15px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
-	}
-	.credit a:hover {
-		opacity: 0.5;
-	}
 
-	/* Pages */
-	#mc-signup #email-entry {
-		display: block;
-		margin: 0 auto;
-		width: 354px;
-	}
-	#mc-signup .email {
-		float: left;
-		display: inline-block;	
-		margin: 0px;
-		width: 250px;
-	}
-	#mc-signup .submit {
-		float: left;
-		display: inline-block;
-		margin: 0px auto;
-		padding: 0px;
-		padding-top: 15px;
-		padding-bottom: 14px;
-		width: 60px;
-		height: auto;
-		border: 1px solid #1C1B1B;
-		font: 10px/10px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
-	}
-	.submit.error {
-		color: #F93636;
-	}
-	.submit.error:hover {
-		color: #1C1B1B;
-		background: #F93636;
-	}
-	form .error-message {
-		color: #F93636;
-		font: 16px/16px 'maven_pro_light_300regular', Arial, sans-serif;
-		letter-spacing: 0px;
-		margin: 10px auto;
-		display: inline-block;
-	}
-	#mc-results .hero {
-		padding-bottom: 0px;
-	}
-	#mc-results .dash-box {
-		padding-top: 5px;
-		padding-bottom: 15px;
-	}
-	#invite-entry input, #invite-error input {
-		margin-bottom: 20px;
-		width: 344px;
-	}
-	a.request-invite-text {
-		color: #DBDBDB;
-		text-decoration: underline;
-		letter-spacing: 2px;
-		font: 11px/15px NovecentowideLightRegular, 'Helvetica Neue', Arial, sans-serif;
-	}
-	a.request-invite-text:hover {
-		color: #05D6D6;
-	}
 
 /* ============================= */
 /* ! Layout for mobile version   */
@@ -427,23 +457,26 @@
 
 @media handheld, only screen and (max-width: 767px) {
 
+
+/* ! Common Styles                */
+/* ------------------------------ */
+
+	/* Generic */
 	.row.center {
 		margin: 0 auto;
 	}
-	.hide-dash .dash {
-		display: none;
-	}
-	.hero h3 {
-		font-size: 20px;
-	}
-	.hero h2 {
-		font-size: 120px;
-	}
-	.feed-item .details {
-		clear: both;
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
+
+	/* Form */
+
+	/* Typography */
+
+	/* Buttons */
+
+	/* Icons */
+
+	/* Header */
+
+	/* Footer */
 	.footer {
 		padding: 15px 0;
 	}
@@ -454,10 +487,112 @@
 		border: none;
 	}
 
+
+
+/* ! Landing Page Styles          */
+/* ------------------------------ */
+
+	/* Landing Page Hero */
+	.landing .hero h3 {
+		font-size: 20px;
+	}
+	.landing .hero h2 {
+		font-size: 120px;
+	}
+
+	/* inline dashes */
+	.landing .hide-dash .dash {
+		display: none;
+	}
+	/* actions bar */
+
+	/* Mailchimp Sign Up Page */
+
+	/* Mailchimp Thank You Page */
+
+	/* Invitation Entry Page */
+
+
+
+
+/* ! Main Application Styles      */
+/* ------------------------------ */
+
+	/* Feed Item */
+	.feed-item .details {
+		clear: both;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
 }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+
+
+/* ! Common Styles                */
+/* ------------------------------ */
+	/* Generic */
+
+	/* Form */
+
+	/* Typography */
+
+	/* Buttons */
+
+	/* Icons */
+
+	/* Header */
+
+	.header {
+		position: fixed;
+		z-index: 1000;
+		padding: 10px 0;
+		border-bottom-width: 2px;
+	}
+	.fixed-header-push.hide {
+		display: block;
+		height: 55px;
+	}
+	.header .logo {
+		padding: auto 0px;
+		max-width: 90%;	
+	}
+
+	/* Footer */
+
+
+
+/* ! Landing Page Styles          */
+/* ------------------------------ */
+	/* Landing Page Hero */
+
+	.landing .hero {
+		padding-top: 30px;
+	}
+	.landing .hero h2 {
+		padding-top: 0px;
+		padding-bottom: 10px;
+		font-size: 55px;
+		line-height: 55px;
+	}
+	.landing .hero h3 {
+		letter-spacing: 2px;
+		font-size: 15px;
+		line-height: 15px;
+	}
+	.landing .hero .subtitle {
+		font-size: 16px;
+	}
+
+	/* inline dashes */
+
+	/* actions bar */
+
+
+	/* Mailchimp Sign Up Page */
 
 	#mc-signup .email {
 		max-width: 100%;
@@ -487,37 +622,17 @@
 		width: 250px;
 		margin-left: -30px;
 	}
-	.header {
-		position: fixed;
-		z-index: 1000;
-		padding: 10px 0;
-		border-bottom-width: 2px;
-	}
-	.fixed-header-push.hide {
-		display: block;
-		height: 55px;
-	}
-	.header .logo {
-		padding: auto 0px;
-		max-width: 90%;	
-	}
-	.hero {
-		padding-top: 30px;
-	}
-	.hero h2 {
-		padding-top: 0px;
-		padding-bottom: 10px;
-		font-size: 55px;
-		line-height: 55px;
-	}
-	.hero h3 {
-		letter-spacing: 2px;
-		font-size: 15px;
-		line-height: 15px;
-	}
-	.hero .subtitle {
-		font-size: 16px;
-	}
+
+	/* Mailchimp Thank You Page */
+
+	/* Invitation Entry Page */
+
+
+
+/* ! Main Application Styles      */
+/* ------------------------------ */
+	/* Feed Item */
+
 }
 
 /* Smartphones (landscape) ----------- */

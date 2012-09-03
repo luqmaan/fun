@@ -21,7 +21,6 @@
 
 			$(".current.section").fadeOut();
 
-
 			switch(hash) {
 				case "/invite":
 					inviteForm.init();
@@ -30,7 +29,6 @@
 					mcForm.init();
 					break;
 				case "/thanks":
-					alert("hai");
 					sections.open($("#mc-results"));
 					break;
 				default:
