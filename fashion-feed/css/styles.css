@@ -133,11 +133,11 @@
 	}
 	.icon:hover {
 		opacity: 0.7;
-		-webkit-transition: opacity 500ms ease;
-		-moz-transition: opacity 500ms ease;
-		-o-transition: opacity 500ms ease;
-		transition: opacity 500ms ease;
-		-ms-transition: opacity 500ms ease;
+		-webkit-transition: opacity 1s ease;
+		-moz-transition: opacity 1s ease;
+		-o-transition: opacity 1s ease;
+		transition: opacity 1s ease;
+		-ms-transition: opacity 1s ease;
 	}
 	.icon.pin {
 		width: 23px;
@@ -210,6 +210,9 @@
 	}
 	.dash.w50 {
 		width: 50px;
+	}
+	.dash.w75 {
+		width: 75px;
 	}
 	.dash.w100 {
 		width: 100px;
@@ -301,7 +304,7 @@
 		color: #DBDBDB;
 	}
 	.landing .hero h3 .dash {
-		width :60px;
+		width :90px;
 	}
 	.landing .hero h4 {
 		font: 19px/19px NovecentowideNormalRegular, 'Helvetica Neue', Arial, sans-serif;
@@ -370,7 +373,7 @@
 		padding: 0px;
 		padding-top: 15px;
 		padding-bottom: 14px;
-		width: 60px;
+		width: 90px;
 		height: auto;
 		border: 1px solid #1C1B1B;
 		font: 10px/10px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
@@ -538,6 +541,27 @@
 /* ! Homepage Stlyes              */
 /* ------------------------------ */
 
+	/* hero */
+
+
+	svg {
+		font: 90px/90px NovecentowideLightBold'Helvetica Neue', Arial, sans-serif;
+	}
+
+	text { fill: url(#hero-image); }
+
+	.homepage.hero {
+		backround: #fff;
+	}
+
+	.homepage .hero h2 {
+		-webkit-mask-image: url('../images/hero-saturated.jpg');
+		-o-mask-image: url('../images/hero-saturated.jpg');
+		-moz-mask-image: url('../images/hero-saturated.jpg');
+		mask-image: url('../images/hero-saturated.jpg');
+		text-shadow: 0px 0px 30px rgba(30, 28, 28, 0.6);
+	}
+
 	/* postbar */
 	.homepage .postbar {
 		background: #111111;
@@ -569,7 +593,7 @@
 		position: relative;
 		margin-right: 10%;
 		float: right;
-		margin-top: -60px;
+		margin-top: -90px;
 	}
 	.homepage .leaders .arrow.more:hover {
 		opacity: 0.7;
