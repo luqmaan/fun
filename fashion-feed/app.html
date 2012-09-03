@@ -24,7 +24,7 @@
 </head>
 
 
-<body class="homepage">
+<body class="homepage app">
 
 <div class="container header">
 	<div class="row">
@@ -33,8 +33,8 @@
 			<h1>Fashion Feed - New York City</h1>
 		</div>
 		<div class="search">
-			<input type="text" name="search" value="Search" />
-			<a href="#">View Schedule</a>
+			<input type="text" name="search" value="Search" /><br />
+			<span class="schedule"><a href="#">View Schedule</a></span>
 		</div>
 	</div>
 </div>
@@ -45,16 +45,10 @@
 </div>
 
 <div class="container hero">
-	<div class="row">
-		<svg>
-			<defs>
-				<pattern id="hero-image" patternUnits="userSpaceOnUse" width="150" height="150" >
-					<image xlink:href="images/hero-saturated.jpg" width="500" height="400" />
-				</pattern>
-			</defs>
-			<text y="100px" x="15%">This Designer</text>
-		</svg>
-
+	<span class="corner left"></span>
+	<span class="corner right"></span>
+	<div class="row center">
+		<h2 class="name">This Designer</h2>
 		<div class="status">is on top</div>
 		<a href="#" class="link">View Leaders</a>
 	</div>

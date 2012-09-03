@@ -241,7 +241,41 @@
 		color: transparent;
 		font-size: 0;
 	}
+	.header .logo {
+		display: inline-block;
+		float: left;
+		position: relative;
+		left: 50%;
+	}
+	.header .logo img {
+		position: relative;
+		left: -50%;
+	}
 
+	.header .search input {
+		width: 150px;
+		font-size: 13px;
+		padding: 5px 10px;
+		text-align: left;
+		color: #808080;
+		border: 1px solid #555;
+	}
+	.header .search {
+		float: right;
+		display: inline-block;
+	}
+	.header .search input {
+		width: 150px;
+		font-size: 13px;
+		padding: 5px 10px;
+		text-align: left;
+		color: #808080;
+		border: 1px solid #555;
+		margin: 0px;
+	}
+	.header .schedule {
+		font: 11px/15px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
+	}
 	/* Footer */
 	.footer {
 		margin: 0px 0px 20px;
@@ -409,6 +443,7 @@
 
 /* ! Main Application Styles      */
 /* ------------------------------ */
+
 	
 	/* TODO: create narrower version of shading so that it doesn't cutoff beyond 1140 */
 	.container.feed {
@@ -544,24 +579,35 @@
 	/* hero */
 
 
-	svg {
-		font: 90px/90px NovecentowideLightBold'Helvetica Neue', Arial, sans-serif;
+	.homepage .hero {
+		background: #fff;
+		height: 187px;
 	}
-
-	text { fill: url(#hero-image); }
-
-	.homepage.hero {
-		backround: #fff;
+	.homepage .hero .row {
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
-
 	.homepage .hero h2 {
-		-webkit-mask-image: url('../images/hero-saturated.jpg');
-		-o-mask-image: url('../images/hero-saturated.jpg');
-		-moz-mask-image: url('../images/hero-saturated.jpg');
-		mask-image: url('../images/hero-saturated.jpg');
-		text-shadow: 0px 0px 30px rgba(30, 28, 28, 0.6);
+		font: 70px/70px NovecentowideLightBold'Helvetica Neue', Arial, sans-serif;
+		margin-bottom: 10px;
 	}
-
+	.homepage .hero .status {
+		font-size: 30px;
+		color: #000;
+	}
+	.homepage .hero .corner {
+		background: url('../images/hero-right-corner.png') no-repeat top left;
+		width: 187px;
+		height: 187px;
+		display: inline-block;
+		position: absolute;
+		left: 0px;
+	}
+	.homepage .hero .corner.right {
+		background: url('../images/hero-left-corner.png');
+		left: auto;
+		right: 0px;
+	}
 	/* postbar */
 	.homepage .postbar {
 		background: #111111;
@@ -694,6 +740,13 @@
 /* ! Homepage Stlyes              */
 /* ------------------------------ */
 
+	/* hero */
+	.homepage .hero .corner {
+		display: none;
+	}
+	.homepage .hero {
+		height: auto;
+	}
 	/* postbar */
 
 	.homepage .leaders .names .name {
