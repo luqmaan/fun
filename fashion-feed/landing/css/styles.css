@@ -16,11 +16,11 @@
 	a {
 		color: #05D6D6;
 		text-decoration: none;
-		-webkit-transition: color 500ms ease, opacity 500ms ease;
-		-moz-transition: color 500ms ease, opacity 500ms ease;
-		-o-transition: color 500ms ease, opacity 500ms ease;
-		transition: color 500ms ease, opacity 500ms ease;
-		-ms-transition: color 500ms ease, opacity 500ms ease;
+		-webkit-transition: color 500ms , opacity 500ms ;
+		-moz-transition: color 500ms , opacity 500ms ;
+		-o-transition: color 500ms , opacity 500ms ;
+		transition: color 500ms , opacity 500ms ;
+		-ms-transition: color 500ms , opacity 500ms ;
 	}
 	a:hover {
 		color: #078181;
@@ -386,6 +386,20 @@
 		border: 1px solid #1C1B1B;
 		font: 10px/10px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
 	}
+	.submit.error {
+		color: #F93636;
+	}
+	.submit.error:hover {
+		color: #1C1B1B;
+		background: #F93636;
+	}
+	form .error-message {
+		color: #F93636;
+		font: 16px/16px 'maven_pro_light_300regular', Arial, sans-serif;
+		letter-spacing: 0px;
+		margin: 10px auto;
+		display: inline-block;
+	}
 	#mc-results .hero {
 		padding-bottom: 0px;
 	}
@@ -445,6 +459,34 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
+	#mc-signup .email {
+		max-width: 100%;
+		margin: 0 auto 10px;
+		clear: both;
+		display: block;
+		float: none;
+		position: relative;
+		display: block;
+		clear: both;
+		float: left;
+		width: 210px;
+		margin-left: 10%;
+	}
+	#mc-signup .submit	 {
+		position: relative;
+		display: block;
+		clear: both;
+		float: left;
+		width: 250px;
+		padding: 15px auto;
+		margin-left: 10%;
+		margin-right: 10%;
+
+	}
+	#mc-signup .error-message {
+		width: 250px;
+		margin-left: -30px;
+	}
 	.header {
 		position: fixed;
 		z-index: 1000;

@@ -163,3 +163,10 @@
     font-style: normal;
 
 }
+
+@font-face {
+  font-family: 'Kotta One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kotta One'), local('KottaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/kottaone/v1/T11KR5KX3fgZhBmu7MWXKrO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}

@@ -18,7 +18,6 @@
 
 	<!-- Fonts -->
 	<link rel="stylesheet" href="css/webfonts/fonts.css" type="text/css" media="screen" /
-	<link href='http://fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src="js/lib/css3-mediaqueries.js"></script>
 
@@ -42,7 +41,7 @@
 </div>
 
 <!-- Initial: Mailchimp Signup -->
-<div id="mc-signup">
+<div id="mc-signup" class="section hide">
 	<div class="container hero">
 		<div class="row hide-dash center">
 			<h3><span class="dash grey"></span> Fashion Week is now social <span class="dash grey"></span></h3>
@@ -56,13 +55,14 @@
 	</div>
 	<div class="container details">
 		<div class="row center">
-			<a href="#" id="request-invite" class="button bold">Request Invite</a>
+			<a href="#!/signup" id="request-invite" class="button bold">Request Invite</a>
 		</div>
 		<div class="row center">
-			<div id="email-entry" style="display:none;">
-				<input class="email" type="text" name="code" value="Enter Email Address" />
+			<form id="email-entry" style="display:none;">
+				<input class="email" type="text" name="email" value="Enter Email Address" />
 				<a class="submit button">Done</a>
-			</div>
+				<div class="error-message"></div>
+			</form>
 		</div>
 		<div class="row center dash-box">
 			<span class="dash darkgrey"></span>
@@ -78,7 +78,7 @@
 </div>
 
 <!-- Mailchimp Results -->
-<div id="mc-results" class="hide">
+<div id="mc-results" class="section hide">
 	<div class="container hero">
 		<div class="row hide-dash center">
 			<h3><span class="dash grey"></span> You're almost there <span class="dash grey"></span></h3>
@@ -97,7 +97,7 @@
 			<span class="dash white"></span>
 		</div>
 		<div class="row center">
-			<a href="#" id="request-invite" class="button">Spread The Word</a>
+			<span class="button">Spread The Word</span>
 		</div>
 		<div class="row center">
 			<span class="serif">&amp; speed things up</span>
@@ -106,7 +106,7 @@
 </div>
 
 <!-- Invitation Entry -->
-<div id="invite-entry" class="hide">
+<div id="invite-entry" class="section hide">
 	<div class="container hero">
 		<div class="row center">
 			<h2>Welcome</h2>
@@ -117,41 +117,18 @@
 	</div>
 	<div class="container details">
 		<div class="row center">
-			<input class="invite" type="text" name="code" value="Enter Invitation Code" />
+			<form id="invite-entry-form">
+				<input class="invite" type="text" name="code" value="Enter Invitation Code" />
+			</form>
 		</div>
 		<div class="row center">
-			<a href="#" id="request-invite" class="button bold">Sign In With Twitter</a>
+			<span id="invite-submit" class="submit sign-in-twitter button bold">Sign In With Twitter</span>
 		</div>
 		<div class="row center">
-			<a href="#" id="sign-in-twitter" class="request-invite-text">Request An Invite</a>
-		</div>
-	</div>
-</div>
-
-<!-- Invitation Error -->
-<div id="invite-error" class="hide">
-	<div class="container hero">
-		<div class="row center">
-			<h2>Denied</h2>
-		</div>
-		<div class="row center">
-		<h4>We didn't recognize that invite</h4><br />
-			<h4 class="cyan">Try again?</h4>
-		</div>
-	</div>
-	<div class="container details">
-		<div class="row center">
-			<input class="invite" type="text" name="code" value="Enter Invitation Code" />
-		</div>	
-		<div class="row center">
-			<a href="#" id="request-invite" class="button bold">Sign In With Twitter</a>
-		</div>
-		<div class="row center">
-			<a href="#" id="sign-in-twitter" class="request-invite-text">Request An Invite</a>
+			<a href="#!/signup" class="request-invite-text">Request An Invite</a>
 		</div>
 	</div>
 </div>
-
 
 
 <div class="container actionsbar">
@@ -243,11 +220,17 @@
 </div>
 
 <script type="text/javascript" src="js/lib/jquery.js"></script>
+<script type="text/javascript" src="js/lib/happy.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript">
+	router.init();
+</script>
 
 <!-- Live Reload -->
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-<script src="http://debug.phonegap.com/target/target-script-min.js#2398230876578"></script>
+<!-- Weinre -->
+ <script src="http://localhost:8080/target/target-script-min.js#2398230876578"></script> 
+
 
 </body>
 

@@ -8,46 +8,41 @@ require_once 'MCAPI.class.php';
 require_once 'config.php';
 $api = new MCAPI($apikey);
 
-$email = $_POST['email'];
-$first = $_POST['first'];
-$last = $_POST['last'];
-$location = $_POST['location'];
-
-if (!$production) {
-	echo $email . "\n";
-	echo $first . "\n";
-	echo $last . "\n";
-	echo $location . "\n";
-}
+$email = $_REQUEST['email'];
+// $first = $_POST['first'];
+// $last = $_POST['last'];
+// $location = $_POST['location'];
 
 $merge_vars = array(
-	'FNAME'=>$first, 
-	'LNAME'=>$last,
-	'MERGE3'=>$location
+//	'FNAME'=>$first, 
+//	'LNAME'=>$last,
+//	'MERGE3'=>$location
 );
 
 // By default this sends a confirmation email - you will not see new members
 // until the link contained in it is clicked!
 $retval = $api->listSubscribe( $listId, $email, $merge_vars );
 
-if ($api->errorCode){
+if ($api->errorCode || $retval == false){
 	if ($production) {
 		$output = array("result" => "error");
 	}
-	else {		
-		echo "Unable to load listSubscribe()!\n";
-		echo "\tCode=".$api->errorCode."\n";
-		echo "\tMsg=".$api->errorMessage."\n";	
-	}
-} else {
-	if ($production) {
-		// $output = array("result" => "success");
-	}
 	else {
-	    echo "Subscribed - look for the confirmation email!\n";		
+		$output = array(
+			"result" => "error",
+			"code" => $api->errorCode,
+			"message" => $api->errorMessage
+		);
 	}
 }
+else {
+	$output = array("result" => "success");
+}
 
-// echo json_encode($output);
+$json = json_encode($output);
+
+echo isset($_REQUEST['callback'])
+    ? "{$_REQUEST['callback']}($json)"
+    : $json;
 
 ?>
