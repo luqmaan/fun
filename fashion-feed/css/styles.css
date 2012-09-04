@@ -19,6 +19,7 @@
 		-o-transition: color 500ms , opacity 500ms ;
 		transition: color 500ms , opacity 500ms ;
 		-ms-transition: color 500ms , opacity 500ms ;
+
 	}
 	a:hover {
 		color: #078181;
@@ -311,6 +312,11 @@
 		opacity: 0.5;
 	}
 
+	/* Smoothing */
+	.footer, .credit {
+		-webkit-backface-visibility: hidden;
+		
+	}
 
 /* ! Landing Page Styles          */
 /* ------------------------------ */
@@ -388,6 +394,10 @@
 		font: 14px/15px 'Kotta One', 'Adobe Garamond Pro', Garamond, Georgia, serif;
 	}
 
+	.section {
+		-webkit-backface-visibility: hidden;
+	}
+
 	/* Mailchimp Sign Up Page */
 	#mc-signup #email-entry {
 		display: block;
@@ -407,7 +417,7 @@
 		padding: 0px;
 		padding-top: 15px;
 		padding-bottom: 14px;
-		width: 90px;
+		width: 60px;
 		height: auto;
 		border: 1px solid #1C1B1B;
 		font: 10px/10px NovecentowideLightBold, 'Helvetica Neue', Arial, sans-serif;
