@@ -12,7 +12,7 @@ details = clean(details);
 var description = price + "<br />" + details;
 
 var insert = "INSERT INTO `specials` (`make`, `thumb`, `headline`, `description`, `leorder`) ";
-insert += "VALUES ('subaru', '', '"+  headline+ "', '" + description + "', NULL);";
+insert += "VALUES ('audi', '', '"+  headline+ "', '" + description + "', NULL);";
 
 function clean(str) {
 	return str.replace(/\&nbsp;/g, "").replace(/[\s\n]+/g, " ");
