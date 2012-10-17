@@ -7,7 +7,7 @@ var Crawler = require("crawler").Crawler
 
 /* Configuration */
 
-var filename = "inserts.sql";
+var filename = "inserts.sql"
 var audi_urls = ["http://www.auditampa.com/specials/index.htm?category=The+2013+Audi+Tampa+A4+Specials",
 	"http://www.auditampa.com/specials/index.htm?category=The+2013+Audi+Tampa+A6+Specials",
 	"http://www.auditampa.com/specials/index.htm?category=The+2013+Audi+Tampa+A8+Specials",
@@ -18,17 +18,17 @@ var subaru_urls = ["http://www.subaruoftampa.com/specials/index.htm?category=For
 	"http://www.subaruoftampa.com/specials/index.htm?category=Tribeca",
 	"http://www.subaruoftampa.com/specials/index.htm?category=Legacy",
 	"http://www.subaruoftampa.com/specials/index.htm?category=Impreza+WRX"]
-var bmw_urls = ["http://www.bmwsouthernoffers.com/Finance/leaseoffers.aspx?iframe=y"];
+var bmw_urls = ["http://www.bmwsouthernoffers.com/Finance/leaseoffers.aspx?iframe=y"]
 
 /* Le Program */
 
 // empty the file before we begin
-var file = path.join(__dirname, filename);
-fs.unlink(file);
-console.log("Writing data to " + file);
+var file = path.join(__dirname, filename)
+fs.unlink(file)
+console.log("Writing data to " + file)
 
 // run it
-var audi_inserts = crawlDealerDotCom("audi", audi_urls, saveResults);
+var audi_inserts = crawlDealerDotCom("audi", audi_urls, saveResults)
 var subaru_inserts = crawlDealerDotCom("subaru", subaru_urls, saveResults)
 var bmw_urls = crawlBMW("bmw", bmw_urls, saveResults)
 
@@ -43,10 +43,10 @@ function saveResults(results, brand) {
 	for (var i in results) {
 		// append data to the file asynchrously
 		fs.appendFile(file, results[i] + "\n", function(err) {
-		  if (err) throw err;
-		});
+		  if (err) throw err
+		})
 	}
-	console.log("-> Saved " + brand);
+	console.log("-> Saved " + brand)
 }
 /**
  * Crawler for the BMW page. This one has all the specials one one page.
@@ -63,7 +63,7 @@ function crawlBMW(brand, urls, callback) {
 	    maxConnections: 10,
 	    callback: function(error,result,$) {
 
-	    	console.log("Got " + result.options.uri);
+	    	console.log("Got " + result.options.uri)
 
 			$(".offer").each(function() {
 
@@ -86,7 +86,7 @@ function crawlBMW(brand, urls, callback) {
 
 	    },
 	    onDrain: function() {
-	    	callback(results, brand);
+	    	callback(results, brand)
 	    }
 	})
 
@@ -113,7 +113,7 @@ function crawlDealerDotCom(brand, urls, callback) {
 	    maxConnections: 10,
 	    callback: function(error,result,$) {
 
-	    	console.log("Got " + result.options.uri);
+	    	console.log("Got " + result.options.uri)
 
 	    	// handle no specials
 	    	var no_specials_indicator = strip($(".bd2 .highlight.ui-state.ui-state-highlight.ui-corner-all").text())
@@ -139,7 +139,7 @@ function crawlDealerDotCom(brand, urls, callback) {
 
 	    },
 	    onDrain: function() {
-	    	callback(results, brand);
+	    	callback(results, brand)
 	    }
 	})
 
