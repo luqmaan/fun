@@ -1,3 +1,4 @@
+
 console.log("hai")
 
 var Crawler = require("crawler").Crawler
@@ -31,6 +32,12 @@ var audi_inserts = crawlDealerDotCom("audi", audi_urls, saveResults);
 var subaru_inserts = crawlDealerDotCom("subaru", subaru_urls, saveResults)
 var bmw_urls = crawlBMW("bmw", bmw_urls, saveResults)
 
+/**
+ * Iterates through the results array and writes the inserts to the filesystem asynchronously.
+ * @param  {array} results Insert statements stored as strings in an array
+ * @param  {string} brand  Yeah, its out of scope 
+ * @return {null}         does not return
+ */
 function saveResults(results, brand) {
 
 	for (var i in results) {
@@ -41,7 +48,13 @@ function saveResults(results, brand) {
 	}
 	console.log("-> Saved " + brand);
 }
-
+/**
+ * Crawler for the BMW page. This one has all the specials one one page.
+ * @param  {string}   brand     Will be used in the insert
+ * @param  {array}   urls       List of URLs the specials are on.
+ * @param  {Function} callback  Set this to the save function 
+ * @return {type}               Returns null, this is asynchronous
+ */
 function crawlBMW(brand, urls, callback) {
 
 	var results = []
@@ -77,6 +90,7 @@ function crawlBMW(brand, urls, callback) {
 	    }
 	})
 
+	// populate the crawler
 	for (var i in urls) {
     	console.log("Loading " + urls[i])
 		c.queue(urls[i])
@@ -84,7 +98,13 @@ function crawlBMW(brand, urls, callback) {
 
 }
 
-
+/**
+ * Crawler for the DealerDotCom pages. In this case, all the specials are on separate pages.
+ * @param  {string}   brand     Will be used in the insert
+ * @param  {array}   urls       List of URLs the specials are on.
+ * @param  {Function} callback  Set this to the save function 
+ * @return {type}               Returns null, this is asynchronous
+ */
 function crawlDealerDotCom(brand, urls, callback) {
 
 	var results = []
@@ -123,6 +143,7 @@ function crawlDealerDotCom(brand, urls, callback) {
 	    }
 	})
 
+	// populate the crawler
 	for (var i in urls) {
     	console.log("Loading " + urls[i])
 		c.queue(urls[i])
