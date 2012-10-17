@@ -17,10 +17,10 @@ var subaru_urls = ["http://www.subaruoftampa.com/specials/index.htm?category=For
 
 
 // run it
-crawlBrand("audi", audi_urls)
-crawlBrand("subaru", subaru_urls)
+var audi_inserts = crawlDealerDotCom("audi", audi_urls)
+var subaru_inserts = crawlDealerDotCom("subaru", subaru_urls)
 
-function crawlBrand(brand, urls) {
+function crawlDealerDotCom(brand, urls) {
 
 	var results = []
 
