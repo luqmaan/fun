@@ -13,7 +13,7 @@ exports.bmw = function($,brand) {
 	$(".offer").each(function() {
 
 		// get data
-		var img_url = $(this).find("img").attr("src")
+		var img = $(this).find("img")
 		var headline = $(this).find("h4").text()
 		var description = $(this).find("a").filter(function() {
 			return $(this).css("display") === "block"
@@ -23,18 +23,39 @@ exports.bmw = function($,brand) {
 		headline = clean(headline)
 		description = clean(description)
 
-        var request = http.get(img_url);
-        console.log("Loading " + img_url);
-        request.on('response', function (res) {
-			console.log("Downloaded "  + img_url);
-            res.on('data', function (buffer) {
-            		base64 = buffer.toString('base64');
-	        		var insert = writeInsert(brand, headline, description, base64)
-					inserts.push(insert)
-					console.log(insert);
-            });
-        });
+		console.log("about to read canvas");
+	    // Create an empty canvas element
+	  	($(this)).add("<canvas>")
 
+	  	var canvas = $(this).find("canvas")
+//	    console.log(canvas.text());
+//	    
+//	    
+
+		canvas = canvas[0];
+
+	    console.log("got convas");
+	    canvas.width = img.width()
+	    canvas.height = img.height()
+
+	    console.log("set width of canvas");
+
+	    // Copy the image contents to the canvas
+	    var ctx = canvas.getContext("2d")
+	    console.log("got canvas context");
+	    ctx.drawImage(img[0], 0, 0)
+
+	    console.log("drew image");
+	    // Get the data-URL formatted image
+	    // Firefox supports PNG and JPEG. You could check img.src to
+	    // guess the original format, but be aware the using "image/jpg"
+	    // will re-encode the image.
+	    var base64 = canvas.toDataURL("image/jpeg").replace(/^data:image\/(png|jpeg);base64,/, "")
+
+	    console.log("got data url: " + base64);
+    	var insert = writeInsert(brand, headline, description, base64)
+
+	    inserts.push(insert)
 	})
 
 	return inserts
