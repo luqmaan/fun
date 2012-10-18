@@ -3,6 +3,8 @@
  * 	Scrapers receive a jQueryified DOM and return an array of INSERTS 
  */
 
+var http = require('http');
+
 exports.bmw = function($,brand) {
 
 	// temp store the insert statemts
@@ -11,7 +13,7 @@ exports.bmw = function($,brand) {
 	$(".offer").each(function() {
 
 		// get data
-		var img = $(this).find("img").attr("src")
+		var img_url = $(this).find("img").attr("src")
 		var headline = $(this).find("h4").text()
 		var description = $(this).find("a").filter(function() {
 			return $(this).css("display") === "block"
@@ -19,13 +21,19 @@ exports.bmw = function($,brand) {
 
 		// clean data
 		headline = clean(headline)
-		img = clean(img)
 		description = clean(description)
 
-		var insert = "INSERT INTO `specials` (`make`, `thumb`, `headline`, `description`, `leorder`) "
-			insert += "VALUES ('" + brand + "', '', '"+  headline+ "', '" + description + "', NULL);"
-
-		inserts.push(insert)
+        var request = http.get(img_url);
+        console.log("Loading " + img_url);
+        request.on('response', function (res) {
+			console.log("Downloaded "  + img_url);
+            res.on('data', function (buffer) {
+            		base64 = buffer.toString('base64');
+	        		var insert = writeInsert(brand, headline, description, base64)
+					inserts.push(insert)
+					console.log(insert);
+            });
+        });
 
 	})
 
@@ -54,8 +62,7 @@ exports.dealerDotCom = function($,brand) {
 
 	var description = price + "<br />" + details
 
-	var insert = "INSERT INTO `specials` (`make`, `thumb`, `headline`, `description`, `leorder`) "
-		insert += "VALUES ('" + brand + "', '', '"+  headline+ "', '" + description + "', NULL);"
+	var insert = writeInsert(brand, headline, description, base64)
 
 	// yes, this is an array of one
 	inserts = [insert]
@@ -63,9 +70,14 @@ exports.dealerDotCom = function($,brand) {
 	return inserts
 }
 
+function writeInsert(brand, headline, description, base64) {
+	var insert = "INSERT INTO `specials` (`make`, `thumb`, `headline`, `description`, `base64`) "
+	insert += "VALUES ('" + brand + "', '', '"+  headline+ "', '" + description + "', '" + base64 + "');"
+	return insert
+}
 
 function clean(str) {
-	return str.replace(/\&nbsp;/g, "").replace(/[\s\n]+/g, " ").replace(/\"/g, '\\\"').replace(/\'/g, '\\\'')
+	return str.replace(/\&nbsp;/g, "").replace(/[\s\n]+/g, " ").replace(/\"/g, '').replace(/\'/g, '')
 }
 function strip(str) {
 	// kills all whitespace

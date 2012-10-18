@@ -1,4 +1,3 @@
-
 console.log("hai")
 
 var Crawler = require("crawler").Crawler
@@ -13,8 +12,8 @@ fs.unlink(file)
 console.log("Writing data to " + file)
 
 // run it
-var audi_inserts = crawl("audi", config.audi_urls, scraper.dealerDotCom, saveResults)
-var subaru_inserts = crawl("subaru", config.subaru_urls, scraper.dealerDotCom, saveResults)
+//var audi_inserts = crawl("audi", config.audi_urls, scraper.dealerDotCom, saveResults)
+//var subaru_inserts = crawl("subaru", config.subaru_urls, scraper.dealerDotCom, saveResults)
 var bmw_urls = crawl("bmw", config.bmw_urls, scraper.bmw, saveResults)
 
 /**
